@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 
-class Main {
+export default class Main {
 
     constructor() {
         this.canvas = document.getElementById('canvas')
@@ -11,6 +11,7 @@ class Main {
         this.renderer = new THREE.WebGLRenderer({ antialias: true, canvas: this.canvas })
         this.renderer.setSize(this.width, this.height)
         this.renderer.setClearColor(0x000000, 1)
+        delete this.renderer.domElement.dataset.engine
 
         this.scene = new THREE.Scene()
 
